@@ -2,6 +2,11 @@ const nodemailer = require('nodemailer');
 const { WebClient } = require('@slack/web-api');
 const config = require('./config.json');
 
+/**
+ * Sends an email notification about build status.
+ * @param {string} subject - The subject of the email.
+ * @param {string} message - The message body of the email.
+ */
 function notifyEmail(subject, message) {
     const transporter = nodemailer.createTransport({
         service: config.email.service,
@@ -18,6 +23,7 @@ function notifyEmail(subject, message) {
         text: message
     };
 
+    // Send the email with the specified options
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
             return console.log('Error sending email: ', error);
@@ -26,6 +32,10 @@ function notifyEmail(subject, message) {
     });
 }
 
+/**
+ * Sends a Slack notification about build status.
+ * @param {string} message - The message to be sent to Slack.
+ */
 function notifySlack(message) {
     if (config.slack.enabled) {
         const slackClient = new WebClient(config.slack.token);
@@ -40,9 +50,11 @@ function notifySlack(message) {
     }
 }
 
+/**
+ * Monitors the build status and sends notifications accordingly.
+ * This is a mocked response for demonstration purposes.
+ */
 function monitorBuildStatus() {
-    // Here you would typically check the build status from the CI system
-    // This is a mocked response for demonstration purposes
     const buildStatus = Math.random() > 0.5 ? 'success' : 'failure';
 
     if (buildStatus === 'success') {
