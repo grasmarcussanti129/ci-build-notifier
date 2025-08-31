@@ -57,15 +57,9 @@ function notifySlack(message) {
 function monitorBuildStatus() {
     const buildStatus = Math.random() > 0.5 ? 'success' : 'failure';
 
-    if (buildStatus === 'success') {
-        const message = 'Build succeeded!';
-        notifyEmail('Build Status Update', message);
-        notifySlack(message);
-    } else {
-        const message = 'Build failed!';
-        notifyEmail('Build Status Update', message);
-        notifySlack(message);
-    }
+    const message = buildStatus === 'success' ? 'Build succeeded!' : 'Build failed!';
+    notifyEmail('Build Status Update', message);
+    notifySlack(message);
 }
 
 // Run the build status monitor
