@@ -26,7 +26,8 @@ function notifyEmail(subject, message) {
     // Send the email with the specified options
     transporter.sendMail(mailOptions, function (error, info) {
         if (error) {
-            return console.log('Error sending email: ', error);
+            console.error('Error sending email: ', error);
+            return;
         }
         console.log('Email sent: ' + info.response);
     });
