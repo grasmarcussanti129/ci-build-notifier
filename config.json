@@ -1,0 +1,18 @@
+{
+  "email": {
+    "enabled": true,
+    "service": "Gmail",
+    "user": "your-email@gmail.com",
+    "pass": "your-email-password",
+    "to": "recipient-email@gmail.com"
+  },
+  "slack": {
+    "enabled": true,
+    "token": "your-slack-bot-token",
+    "channel": "#build-notifications"
+  },
+  "ci": {
+    "tool": "Jenkins",
+    "url": "http://your-ci-url.com/build-status"
+  }
+}
