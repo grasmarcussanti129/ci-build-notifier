@@ -1,5 +1,4 @@
 {
-  // Email configuration
   "email": {
     "enabled": true,
     "service": "Gmail",
@@ -7,13 +6,11 @@
     "pass": "your-email-password",
     "to": "recipient-email@gmail.com"
   },
-  // Slack configuration
   "slack": {
     "enabled": true,
     "token": "your-slack-bot-token",
     "channel": "#build-notifications"
   },
-  // CI configuration
   "ci": {
     "tool": "Jenkins",
     "url": "http://your-ci-url.com/build-status"
