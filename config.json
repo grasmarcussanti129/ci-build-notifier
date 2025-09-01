@@ -3,12 +3,12 @@
     "enabled": true,
     "service": "Gmail",
     "user": "your-email@gmail.com",
-    "pass": "your-email-password",  // Consider using environment variables for security
+    "pass": "your-email-password",  
     "to": "recipient-email@gmail.com"
   },
   "slack": {
     "enabled": true,
-    "token": "your-slack-bot-token",  // Store securely; consider using vaults
+    "token": "your-slack-bot-token",  
     "channel": "#build-notifications"
   },
   "ci": {
